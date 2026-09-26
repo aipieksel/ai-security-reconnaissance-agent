@@ -1,0 +1,29 @@
+{
+  "name": "ai-security-reconnaissance-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A DeepSeek Harness preset for AI-assisted reconnaissance, attack-surface discovery, and evidence-backed reports",
+  "type": "module",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "start": "node scripts/start.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "test": "node --test",
+    "test:runtime": "node scripts/smoke.mjs",
+    "audit:release": "node scripts/audit.mjs"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.1.1-rc.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "js-yaml": "4.2.0"
+  },
+  "packageManager": "pnpm@11.19.0",
+  "license": "MIT",
+  "author": "aipieksel"
+}
