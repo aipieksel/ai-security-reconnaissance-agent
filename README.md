@@ -2,11 +2,17 @@
 
 Maintained by [aipieksel](https://github.com/aipieksel). Upstream credits and licenses remain with their respective authors.
 
-**A reconnaissance agent preset for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness).** Install it in DeepSeek Harness, select **AI Security Reconnaissance Agent**, and give it an authorized target and a mission. The agent gathers evidence, maps domains and exposed services, identifies technologies, and writes a reconnaissance report.
+AI Security Reconnaissance Agent helps an authorized assessor build an evidence-backed map of a target before deciding what needs closer review. It guides passive research, bounded discovery of exposed services, and a final inventory of assets and technologies. Its report records observations and scope rather than claiming to have exploited or proven vulnerabilities.
 
-The preset defines the agent's instructions and connects it to persistent Bash and file-editing tools. **DeepSeek Harness is the application that runs the preset**: it provides the Web UI, model connection, session history, and tool execution. This repository contains the preset and setup helpers; running a mission requires DeepSeek Harness and a configured model provider.
+This repository supplies an agent preset and setup helpers for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). Harness supplies the Web UI, model connection, sessions, and tools; the preset supplies the reconnaissance workflow. Use an existing Harness installation or launch a separate local instance with the helpers below. You need permission for the target and a configured model provider.
 
-The workflow has three phases: passive research, bounded active discovery, and an evidence-backed inventory of assets and technologies. Its instructions prohibit exploitation, authentication bypass, data modification, and service disruption.
+## How a mission works
+
+1. Define the exact authorized host, allowed checks, request pace, and stop conditions.
+2. Select the preset in a new Harness session and run passive research before bounded active discovery.
+3. Review the generated `RECON_REPORT.md` and supporting evidence in the mission workspace before using them for any later assessment.
+
+The workflow prohibits exploitation, authentication bypass, data changes, and service disruption. Discovered subdomains and third-party systems are leads until separately authorized.
 
 ## Already using DeepSeek Harness?
 
