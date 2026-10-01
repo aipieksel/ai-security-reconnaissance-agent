@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="WordPress 6.4.2">
+  <title>Local recon fixture (authorized dry-run only)</title>
+</head>
+<body>
+  <h1>Local fixture</h1>
+  <p>Zero-Exploitation dry-run page. Not a live target.</p>
+  <ul>
+    <li><a href="/swagger-ui.html">API docs (Swagger)</a></li>
+    <li><a href="/openapi.json">OpenAPI spec</a></li>
+    <li><a href="/docs/sample.pdf">Sample PDF</a></li>
+    <li><a href="/wp-content/themes/twentytwentyfour/style.css">Theme stylesheet</a></li>
+  </ul>
+  <script>
+    // Intentional discovery lead for local parsers only
+    const apiBase = "/api/v1/status";
+  </script>
+</body>
+</html>

@@ -31,7 +31,12 @@ test('Cordis YAML exposes the configured persona and both tool groups', async ()
   // Parse the trusted expression as text; only Harness evaluates !!js.
   const schema = yaml.DEFAULT_SCHEMA.extend([new yaml.Type('tag:yaml.org,2002:js', {kind: 'scalar', construct: value => value})]);
   const rows = yaml.load(await readFile(join(root, 'presets/ai-security-reconnaissance-agent/agent.cordis.yml'), 'utf8'), {schema});
-  assert.match(rows[0].config.text, /Zero-Exploitation/);
+  const persona = rows[0].config.text;
+  assert.match(persona, /Zero-Exploitation/);
+  assert.match(persona, /WordPress/i);
+  assert.match(persona, /\bPHP\b/);
+  assert.match(persona, /API/);
+  assert.match(persona, /Documents/i);
   assert.deepEqual(rows.map(row => row.id), ['persona', 'persistent-shell', 'filesystem']);
   assert.equal(rows[2].config[0].config.cwd, 'process.env.DSH_CWD ?? process.cwd()');
 });

@@ -8,11 +8,20 @@ This repository supplies an agent preset and setup helpers for [DeepSeek Harness
 
 ## How a mission works
 
-1. Define the exact authorized host, allowed checks, request pace, and stop conditions.
+1. Define the exact authorized host, allowed checks, request pace (≤1 rps), and stop conditions.
 2. Select the preset in a new Harness session and run passive research before bounded active discovery.
-3. Review the generated `RECON_REPORT.md` and supporting evidence in the mission workspace before using them for any later assessment.
+3. Cover the discovery surfaces listed below on the authorized host only, then review the generated `RECON_REPORT.md` and supporting evidence in the mission workspace before using them for any later assessment.
 
-The workflow prohibits exploitation, authentication bypass, data changes, and service disruption. Discovered subdomains and third-party systems are leads until separately authorized.
+The workflow is **Zero-Exploitation**: discovery and documentation only. It prohibits exploitation, authentication bypass, password spraying, fuzzing payloads, SQL/XSS/attack strings, data changes, DoS, dumping `.git` objects, and service disruption. Discovered subdomains and third-party systems are leads until separately authorized.
+
+### Discovery surfaces (authorized host, ≤1 rps)
+
+| Surface | What is collected | What is not done |
+| --- | --- | --- |
+| **WordPress** | Version/theme/plugin fingerprints from public evidence (generator meta, `readme.html`, `wp-includes` / plugin asset paths, `xmlrpc.php` presence, REST `/wp-json/` when publicly readable) | Credential brute force, method abuse, weaponization |
+| **PHP / stack** | Public phpinfo-like pages if already exposed, `.php` path hints from robots/sitemaps/HTML/JS, framework fingerprints (Laravel/Symfony/etc.) from headers/cookies/error pages; exposure severity | Crafted payloads, auth bypass |
+| **API endpoints** | Crawl/parse HTML+JS for `/api`, GraphQL, OpenAPI/Swagger/Redoc, Actuator, `.well-known`, sitemap URLs; one-level same-host recursion | Mutating verbs, parameter fuzzing, auth attempts |
+| **Documents / text** | Publicly linked or guessable docs (pdf/doc/docx/txt/md/csv/json/xml), env-looking names, backups, READMEs, changelogs, licenses, directory listings, `.git` *indicators* only; path + status + snippet hashes | Bulk private data retention, `.git` object dumps |
 
 ## Already using DeepSeek Harness?
 
@@ -56,8 +65,9 @@ Perform full passive and active discovery. Document everything.
 
 Scope: this hostname only, HTTP/HTTPS on ports 80 and 443.
 Treat discovered subdomains and third-party infrastructure as leads, not authorized targets.
-Use at most one request per second; stop on rate limits or service instability.
-Do not attempt authentication, exploit vulnerabilities, or retrieve private data.
+Use at most one request per second (≤1 rps); stop on rate limits or service instability.
+Also map WordPress, PHP/stack, API, and Documents surfaces from public evidence only.
+Do not attempt authentication, exploit vulnerabilities, spray credentials, fuzz, dump .git objects, or retrieve private data.
 Save the report and supporting artifacts in the working directory.
 Separate observations, inferences, failed checks, and coverage gaps.
 ```
@@ -107,7 +117,7 @@ pnpm test
 pnpm run test:runtime
 ```
 
-The runtime test uses isolated temporary state and local fixtures. It needs no provider key and does not assess an external target. See [CONTRIBUTING.md](CONTRIBUTING.md).
+The runtime test uses isolated temporary state and local fixtures. It needs no provider key and does not assess an external target. Optional static HTML under [`tests/fixtures/`](tests/fixtures/) illustrates WordPress generator meta, a Swagger link, and a PDF link for local dry-run parsing only — do not point missions at unauthorized external hosts. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 AI Security Reconnaissance Agent is an independent project built on DeepSeek Harness. It is not an official DeepSeek product. Third-party attribution is in [NOTICE](NOTICE).
 

@@ -4,13 +4,15 @@ The launcher starts the pinned upstream Web profile with an isolated Harness hom
 
 | Row | Upstream component | Role |
 | --- | --- | --- |
-| `persona` | `@deepseek-ai/dsh-persona` | Three-phase research and reporting instructions |
+| `persona` | `@deepseek-ai/dsh-persona` | Zero-Exploitation methodology: passive/active recon plus WordPress, PHP/stack, API, and Documents discovery phases with evidence-backed report sections |
 | `persistent-shell` | Cordis group, terminal, terminal-bash, tool-bash-persistent | Persistent Bash, five-minute command timeout |
 | `filesystem` | Cordis group, fs-local, tool-str-replace-editor | Workspace file access and precise edits |
 
 The `isolate` entries separate Cordis services. They are not OS containers. `fs-local.cwd` uses the trusted Cordis `!!js` expression `process.env.DSH_CWD ?? process.cwd()`. Do not run untrusted preset compositions.
 
 The persona uses `complete: true` and `includeRuntimeContext: false`, preserving the original source. It replaces the composed system prompt and suppresses default runtime context. Scope, evidence standards, and operating limits should be explicit in the mission message; do not assume another preset's instructions apply.
+
+The persona encodes a **Zero-Exploitation** policy (discovery and documentation only) and expands active discovery to four evidence-backed surfaces on the authorized host at ≤1 rps: WordPress public fingerprints, PHP/framework signals, API endpoint expansion (HTML/JS crawl with one-level same-host recursion), and documents/text artifacts (path + status + snippet hashes; `.git` indicators only, no object dumps). These are prompt instructions, not an enforced network allowlist or rate limiter.
 
 The host profile owns model routing, credentials, session persistence, approvals, and the Web UI. The preset supplies the model-facing Bash and editor tools. Operating-system commands are external dependencies, not bundled scanner implementations. No dedicated browser or web-search tool is installed by AI Security Reconnaissance Agent.
 

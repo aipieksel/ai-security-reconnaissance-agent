@@ -2,5 +2,6 @@ name: AI Security Reconnaissance Agent
 description: |-
   A DeepSeek Harness preset for passive research and bounded active
   reconnaissance. Maps domains, discovers exposed services, fingerprints
-  technologies, and writes evidence-backed reports using Bash and file editing.
+  technologies (including WordPress, PHP/stack, APIs, and documents), and
+  writes evidence-backed Zero-Exploitation reports using Bash and file editing.
 order: 10
