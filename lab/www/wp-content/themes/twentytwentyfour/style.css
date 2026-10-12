@@ -1,0 +1,12 @@
+/*
+Theme Name: Twenty Twenty-Four
+Theme URI: https://wordpress.org/themes/twentytwentyfour/
+Author: Fixture Lab
+Description: Harmless theme stylesheet stub for reconnaissance fixtures.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.4
+Requires PHP: 7.0
+Text Domain: twentytwentyfour
+*/
+body { font-family: system-ui, sans-serif; margin: 2rem; }

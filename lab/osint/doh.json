@@ -1,0 +1,17 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic DNS-over-HTTPS JSON answers (Cloudflare/Google dns-json shape). example.com only. IPs are RFC 5737 documentation addresses, not live hosts.",
+  "_source": "Scout pack §B3 (DNS/subdomain, public resolvers); RFC 8484; Cloudflare DoH JSON; Google Public DNS JSON",
+  "resolver": "stub (cloudflare-dns.com/dns-query + dns.google/resolve shape)",
+  "answers": {
+    "example.com": { "A": ["192.0.2.10"], "status": 0 },
+    "www.example.com": { "A": ["192.0.2.10"], "status": 0 },
+    "api.example.com": { "A": ["192.0.2.20"], "status": 0 },
+    "panel.example.com": { "A": ["192.0.2.30"], "status": 0 },
+    "cdn.example.com": { "CNAME": ["cdn.example-cdn.net"], "A": ["203.0.113.40"], "status": 0 },
+    "legacy.example.com": { "status": 3, "_comment": "NXDOMAIN — historical CT name with no current A record (dangling/takeover CANDIDATE only; do NOT claim takeover without Phase B written scope)" }
+  },
+  "txt": {
+    "example.com": ["v=spf1 -all", "example-site-verification=fixture-not-real"]
+  }
+}

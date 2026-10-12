@@ -1,0 +1,8 @@
+name: AI Security Reconnaissance Agent
+description: |-
+  A DeepSeek Harness preset for passive research and bounded active
+  reconnaissance using selectable mission packs (Core, WordPress, API,
+  Documents). Maps domains, fingerprints technologies including PHP/stack
+  under Core, and writes evidence-backed reports under Zero-Exploitation.
+  Phase A uses a loopback fixture lab.
+order: 10

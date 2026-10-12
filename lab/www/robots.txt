@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /backups/
+Allow: /
+
+# PHP application paths
+Disallow: /app.php
+Disallow: /index.php
+
+Sitemap: http://127.0.0.1:8765/sitemap.xml

@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "selected": [
+    "core",
+    "wordpress",
+    "api",
+    "documents"
+  ],
+  "packs": [
+    {
+      "id": "core",
+      "name": "Core",
+      "reportSections": [
+        "Core",
+        "PHP / stack"
+      ]
+    },
+    {
+      "id": "wordpress",
+      "name": "WordPress",
+      "reportSections": [
+        "WordPress"
+      ]
+    },
+    {
+      "id": "api",
+      "name": "API",
+      "reportSections": [
+        "APIs"
+      ]
+    },
+    {
+      "id": "documents",
+      "name": "Documents",
+      "reportSections": [
+        "Documents"
+      ]
+    }
+  ],
+  "zeroExploitation": true,
+  "loopbackOnlyPhaseA": true
+}

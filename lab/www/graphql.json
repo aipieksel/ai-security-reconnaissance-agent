@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "message": "GraphQL introspection is not allowed in this fixture lab",
+      "extensions": {"code": "INTROSPECTION_DISABLED"}
+    }
+  ]
+}

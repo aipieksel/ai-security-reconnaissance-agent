@@ -1,0 +1,15 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic BFF / edge / CDN classification from public JS + response headers. Observation only — no bypass recipes.",
+  "_source": "Scout pack §B6 (BFF/proxy/edge mapping); companion files: app.bundle.js, headers-public.json",
+  "apex": "example.com",
+  "js_bundle": "app.bundle.js",
+  "extracted": {
+    "same_origin_api_prefixes": ["/api/v1"],
+    "absolute_api_bases": ["https://api.example.com"],
+    "env_prefixes": ["VITE_API_BASE"],
+    "fetch_calls": ["fetch(\"/api/v1/status\")"]
+  },
+  "headers_file": "headers-public.json",
+  "edge_labels": ["cdn-stub", "server: nginx", "via: 1.1 varnish-stub", "cf-ray: fixture"]
+}

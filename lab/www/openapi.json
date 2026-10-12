@@ -1,0 +1,29 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Fixture Lab API",
+    "version": "1.0.0",
+    "description": "Harmless OpenAPI document for reconnaissance fixtures"
+  },
+  "servers": [{"url": "http://127.0.0.1:8765"}],
+  "paths": {
+    "/api/v1/status": {
+      "get": {
+        "summary": "Service status",
+        "responses": {"200": {"description": "OK"}}
+      }
+    },
+    "/api/v1/users": {
+      "get": {
+        "summary": "List public user stubs",
+        "responses": {"200": {"description": "OK"}}
+      }
+    },
+    "/actuator/health": {
+      "get": {
+        "summary": "Health",
+        "responses": {"200": {"description": "UP"}}
+      }
+    }
+  }
+}

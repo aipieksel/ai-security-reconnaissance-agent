@@ -1,0 +1,5 @@
+id,name,kind
+1,notes.txt,text
+2,readme.md,markdown
+3,manifest.json,json
+4,public-overview.pdf,pdf

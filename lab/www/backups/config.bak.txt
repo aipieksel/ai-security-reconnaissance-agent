@@ -1,0 +1,6 @@
+# backup-looking filename for discovery only
+# NOT a real database dump or credential store
+app_name=fixture-lab
+env=local
+debug=false
+note=harmless placeholder content for Phase A document surface

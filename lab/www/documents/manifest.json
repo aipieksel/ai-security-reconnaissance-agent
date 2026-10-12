@@ -1,0 +1,5 @@
+{
+  "lab": "ai-security-reconnaissance-agent-fixture",
+  "phase": "A",
+  "documents": ["notes.txt", "readme.md", "inventory.csv", "public-overview.pdf"]
+}

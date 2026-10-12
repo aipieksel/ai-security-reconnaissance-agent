@@ -1,0 +1,24 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic GitHub code-search-style hits. FAKE/sample secrets only — never real credentials. Policy: report-don't-auth.",
+  "_source": "Scout pack §B5 (Leak hunting, discovery only); GitHub REST code search (auth required, 10 req/min)",
+  "query": "example.com filename:.env",
+  "policy": "report-don't-auth: record the reference only; never authenticate with, validate, or reuse any value found.",
+  "total_count": 2,
+  "items": [
+    {
+      "repository": "octo-demo/example-config",
+      "path": "config/.env.sample",
+      "html_url": "https://github.com/octo-demo/example-config/blob/main/config/.env.sample",
+      "match": "EXAMPLE_API_KEY=fixture-not-real",
+      "note": "Synthetic sample value; not a live credential."
+    },
+    {
+      "repository": "octo-demo/legacy-scripts",
+      "path": "deploy/notes.txt",
+      "html_url": "https://github.com/octo-demo/legacy-scripts/blob/main/deploy/notes.txt",
+      "match": "contact ops for EXAMPLE_API_KEY (value redacted, fixture-not-real)",
+      "note": "Synthetic redacted placeholder."
+    }
+  ]
+}

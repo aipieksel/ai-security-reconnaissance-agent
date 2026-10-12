@@ -1,0 +1,18 @@
+{
+  "name": "Fixture Lab WP",
+  "description": "Static WordPress REST route list stub",
+  "url": "http://127.0.0.1:8765",
+  "namespaces": ["oembed/1.0", "wp/v2"],
+  "routes": {
+    "/": {"methods": ["GET"], "endpoints": [{"methods": ["GET"]}]},
+    "/wp/v2": {"methods": ["GET"]},
+    "/wp/v2/posts": {"methods": ["GET"]},
+    "/wp/v2/pages": {"methods": ["GET"]},
+    "/wp/v2/users": {"methods": ["GET"]},
+    "/wp/v2/media": {"methods": ["GET"]}
+  },
+  "site_logo": null,
+  "_links": {
+    "help": [{"href": "https://developer.wordpress.org/rest-api/"}]
+  }
+}

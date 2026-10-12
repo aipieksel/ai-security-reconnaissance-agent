@@ -1,0 +1,4 @@
+Fixture lab public notes
+========================
+This text file is linked from robots.txt / sitemap.xml for document discovery.
+No secrets. No credentials. Harmless content only.

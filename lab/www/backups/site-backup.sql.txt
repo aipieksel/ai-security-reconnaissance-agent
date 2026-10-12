@@ -1,0 +1,3 @@
+-- site-backup.sql.txt (harmless .sql-looking name, plain text only)
+-- SELECT 'fixture' AS note;
+-- No schema dumps, no user hashes, no real SQL payloads.

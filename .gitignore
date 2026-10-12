@@ -1,0 +1,14 @@
+# Local Harness state and mission output
+.recon/
+missions/*
+!missions/.gitkeep
+
+# Lab runtime / test output (regenerated)
+lab/out/
+
+# Dependencies and OS noise
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*

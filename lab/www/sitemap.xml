@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>http://127.0.0.1:8765/</loc></url>
+  <url><loc>http://127.0.0.1:8765/documents/notes.txt</loc></url>
+  <url><loc>http://127.0.0.1:8765/documents/readme.md</loc></url>
+  <url><loc>http://127.0.0.1:8765/documents/inventory.csv</loc></url>
+  <url><loc>http://127.0.0.1:8765/documents/manifest.json</loc></url>
+  <url><loc>http://127.0.0.1:8765/docs/public-overview.pdf</loc></url>
+  <url><loc>http://127.0.0.1:8765/wp-content/themes/twentytwentyfour/style.css</loc></url>
+</urlset>

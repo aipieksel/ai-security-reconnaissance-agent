@@ -1,0 +1,13 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic crt.sh-style Certificate Transparency rows. example.com only. crt.sh returned HTTP 502 for example.com on 2026-10-06 (Scout); this fixture is the offline fallback.",
+  "_source": "Scout pack §B2 (Certificate Transparency); crt.sh https://crt.sh/ ; RFC 6962",
+  "query": "%.example.com",
+  "rows": [
+    { "id": 100000001, "issuer_name": "C=US, O=Example CA, CN=Example R3", "common_name": "example.com", "name_value": "example.com\nwww.example.com", "not_before": "2026-07-01T00:00:00", "not_after": "2026-09-29T00:00:00", "serial_number": "03aa00fixture" },
+    { "id": 100000002, "issuer_name": "C=US, O=Example CA, CN=Example R3", "common_name": "api.example.com", "name_value": "api.example.com", "not_before": "2026-07-05T00:00:00", "not_after": "2026-10-03T00:00:00", "serial_number": "03bb00fixture" },
+    { "id": 100000003, "issuer_name": "C=US, O=Example CA, CN=Example R3", "common_name": "panel.example.com", "name_value": "panel.example.com\n*.panel.example.com", "not_before": "2026-06-20T00:00:00", "not_after": "2026-09-18T00:00:00", "serial_number": "03cc00fixture" },
+    { "id": 100000004, "issuer_name": "C=US, O=Example Trust Services, CN=Example WE1", "common_name": "cdn.example.com", "name_value": "cdn.example.com", "not_before": "2026-08-01T00:00:00", "not_after": "2026-10-30T00:00:00", "serial_number": "03dd00fixture" },
+    { "id": 100000005, "issuer_name": "C=US, O=Example CA, CN=Example R3", "common_name": "legacy.example.com", "name_value": "legacy.example.com", "not_before": "2024-01-01T00:00:00", "not_after": "2024-04-01T00:00:00", "serial_number": "03ee00fixture" }
+  ]
+}

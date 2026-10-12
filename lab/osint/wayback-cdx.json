@@ -1,0 +1,15 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic Wayback CDX rows (array-of-arrays with header row, as the CDX server returns). example.com only.",
+  "_source": "Scout pack §B4 (Archives); Internet Archive Wayback CDX server README",
+  "query": "url=example.com&matchType=domain&output=json&fl=timestamp,original,statuscode,mimetype&collapse=urlkey&limit=10",
+  "rows": [
+    ["timestamp", "original", "statuscode", "mimetype"],
+    ["20020115031608", "http://example.com/", "200", "text/html"],
+    ["20140210120000", "http://example.com/robots.txt", "200", "text/plain"],
+    ["20190701083000", "http://example.com/old-admin/", "301", "text/html"],
+    ["20210305101500", "https://example.com/docs/public-overview.pdf", "200", "application/pdf"],
+    ["20220811142200", "https://api.example.com/v1/status", "200", "application/json"],
+    ["20231220090000", "https://example.com/openapi.json", "200", "application/json"]
+  ]
+}

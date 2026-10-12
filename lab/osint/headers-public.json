@@ -1,0 +1,15 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic public response headers for CDN/WAF/CORS classification. Not a live capture.",
+  "url": "https://www.example.com/",
+  "status": 200,
+  "headers": {
+    "server": "nginx",
+    "via": "1.1 varnish-stub",
+    "cf-ray": "fixture0000000000-JNB",
+    "x-cache": "HIT",
+    "access-control-allow-origin": "https://www.example.com",
+    "access-control-allow-credentials": "true",
+    "set-cookie": "__cf_bm=fixture-not-real; Path=/; HttpOnly"
+  }
+}

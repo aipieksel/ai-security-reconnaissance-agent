@@ -1,0 +1,24 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic SERP stub for the Phase A fixture lab. example.com / fixture-lab.local placeholders only. Not real search-engine results.",
+  "_source": "Scout pack /workspace/ai-security-agent-build/SCOUT-passive-osint-techniques.md §B1 (search-engine dorking, templates only)",
+  "apex": "example.com",
+  "queries": [
+    "site:example.com",
+    "site:example.com filetype:pdf",
+    "site:example.com inurl:api",
+    "site:example.com inurl:(login|admin|panel|client|billing)",
+    "site:example.com \"openapi\" OR \"swagger\"",
+    "\"example.com\" filetype:env"
+  ],
+  "results": [
+    { "engine": "stub", "url": "https://www.example.com/", "title": "Example Domain", "snippet": "Illustrative homepage (synthetic)." },
+    { "engine": "stub", "url": "https://www.example.com/about", "title": "About — Example", "snippet": "Synthetic about page." },
+    { "engine": "stub", "url": "https://api.example.com/v1/status", "title": "API status", "snippet": "Synthetic API host candidate." },
+    { "engine": "stub", "url": "https://panel.example.com/login", "title": "Client panel login", "snippet": "Synthetic panel candidate." },
+    { "engine": "stub", "url": "https://example.com/docs/public-overview.pdf", "title": "Public overview (PDF)", "snippet": "Synthetic indexed document." },
+    { "engine": "stub", "url": "https://example.com/openapi.json", "title": "OpenAPI spec", "snippet": "Synthetic spec pointer." },
+    { "engine": "stub", "url": "https://example.com/.well-known/security.txt", "title": "security.txt", "snippet": "Synthetic security-contact pointer." },
+    { "engine": "stub-bing", "url": "https://cdn.example.com/static/app.bundle.js", "title": "app bundle", "snippet": "Synthetic CDN asset." }
+  ]
+}

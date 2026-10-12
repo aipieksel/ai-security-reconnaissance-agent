@@ -1,0 +1,83 @@
+{
+  "$schema_comment": "Extensible mission-pack registry. Add a new file under packs/ and list it here to register a 5th pack.",
+  "version": 1,
+  "packs": [
+    {
+      "id": "core",
+      "name": "Core",
+      "summary": "OSINT/job/blog/repo leads, DNS/CT (crt.sh), authorized port probes, tech fingerprint (headers/cookies/JS), robots.txt + sitemap.xml, common static paths, and PHP/stack signals (phpinfo-like stubs, framework headers/cookies, .php paths).",
+      "reportSections": ["Core", "PHP / stack"],
+      "default": true,
+      "probes": [
+        { "surface": "Core", "path": "/robots.txt", "save": "robots.txt" },
+        { "surface": "Core", "path": "/sitemap.xml", "save": "sitemap.xml" },
+        { "surface": "Core", "path": "/", "save": "index.html" },
+        { "surface": "Core", "path": "/static/app.js", "save": "static-app.js" },
+        { "surface": "PHP", "path": "/phpinfo-stub.html", "save": "phpinfo-stub.html" },
+        { "surface": "PHP", "path": "/index.php", "save": "index.php.html" },
+        { "surface": "PHP", "path": "/app.php", "save": "app.php.html" }
+      ]
+    },
+    {
+      "id": "wordpress",
+      "name": "WordPress",
+      "summary": "generator meta, readme.html, wp-includes versioned assets, plugin asset paths, xmlrpc, wp-json routes, theme style.css headers. Discovery-only.",
+      "reportSections": ["WordPress"],
+      "default": true,
+      "probes": [
+        { "surface": "WordPress", "path": "/", "save": "index.html" },
+        { "surface": "WordPress", "path": "/readme.html", "save": "readme.html" },
+        { "surface": "WordPress", "path": "/xmlrpc.php", "save": "xmlrpc.php.xml" },
+        { "surface": "WordPress", "path": "/wp-json/", "save": "wp-json.json" },
+        { "surface": "WordPress", "path": "/wp-includes/js/wp-emoji-release.min.js?ver=6.4.3", "save": "wp-emoji.js" },
+        { "surface": "WordPress", "path": "/wp-content/plugins/hello-dolly/hello.js", "save": "hello-dolly.js" },
+        { "surface": "WordPress", "path": "/wp-content/themes/twentytwentyfour/style.css", "save": "theme-style.css" }
+      ]
+    },
+    {
+      "id": "api",
+      "name": "API",
+      "summary": "OpenAPI/Swagger HTML+JSON, GraphQL discoverable endpoint with introspection-disabled stub, Actuator health, nested /api/v1 from JS, plus exposure indicators (auth-required vs public, CORS/headers, verbose errors, unauthenticated list routes). Zero-exploitation.",
+      "reportSections": ["APIs"],
+      "default": true,
+      "probes": [
+        { "surface": "APIs", "path": "/swagger-ui.html", "save": "swagger-ui.html" },
+        { "surface": "APIs", "path": "/openapi.json", "save": "openapi.json" },
+        { "surface": "APIs", "path": "/graphql", "save": "graphql.json" },
+        { "surface": "APIs", "path": "/actuator/health", "save": "actuator-health.json" },
+        { "surface": "APIs", "path": "/api/v1/status", "save": "api-v1-status.json" },
+        { "surface": "APIs", "path": "/api/v1/users", "save": "api-v1-users.json" },
+        { "surface": "APIs", "path": "/static/app.js", "save": "static-app-api.js" }
+      ]
+    },
+    {
+      "id": "documents",
+      "name": "Documents",
+      "summary": "robots/sitemap links to pdf/txt/md/csv/json, directory listing stubs, backup-looking filenames (harmless content), .git/HEAD indicator only (no object dump).",
+      "reportSections": ["Documents"],
+      "default": true,
+      "probes": [
+        { "surface": "Documents", "path": "/robots.txt", "save": "robots-docs.txt" },
+        { "surface": "Documents", "path": "/sitemap.xml", "save": "sitemap-docs.xml" },
+        { "surface": "Documents", "path": "/documents/notes.txt", "save": "notes.txt" },
+        { "surface": "Documents", "path": "/documents/readme.md", "save": "readme.md" },
+        { "surface": "Documents", "path": "/documents/inventory.csv", "save": "inventory.csv" },
+        { "surface": "Documents", "path": "/documents/manifest.json", "save": "manifest.json" },
+        { "surface": "Documents", "path": "/docs/public-overview.pdf", "save": "public-overview.pdf" },
+        { "surface": "Documents", "path": "/uploads/", "save": "uploads-index.html" },
+        { "surface": "Documents", "path": "/backups/config.bak.txt", "save": "config.bak.txt" },
+        { "surface": "Documents", "path": "/.git/HEAD", "save": "git-HEAD.txt" }
+      ]
+    },
+    {
+      "id": "osint",
+      "name": "OSINT",
+      "summary": "Deep passive OSINT on one selection (no live HostAfrica): search dorks (templates), Certificate Transparency SAN inventory (crt.sh), DNS/subdomain from public resolvers (DoH), web archives (Wayback CDX), public leak hunting (report-don't-auth, fake secrets only), and BFF/proxy edge mapping from public JS/headers. Fixtures load from lab/osint/ (static files); optional live public-aggregator adapters behind --live-osint (default OFF). Passive/discovery only.",
+      "reportSections": ["OSINT / Dorks", "OSINT / CT", "OSINT / DNS", "OSINT / Archives", "OSINT / Leaks", "OSINT / BFF-edge"],
+      "default": true,
+      "passive": true,
+      "fixtureDir": "lab/osint",
+      "probes": []
+    }
+  ]
+}
